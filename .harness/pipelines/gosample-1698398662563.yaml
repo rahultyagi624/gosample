@@ -31,6 +31,15 @@ pipeline:
                     command: go test -v ./...
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  identifier: build_go_app
+                  name: Build Go App
+                  spec:
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      go build
+                      go test   
           platform:
             arch: Amd64
             os: Linux
